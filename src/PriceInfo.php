@@ -7,15 +7,15 @@ namespace SilverShop\Discounts;
  */
 class PriceInfo
 {
-    protected int|float $originalprice;
+    protected int|float|null $originalprice;
 
-    protected int|float $currentprice; //for compounding discounts
+    protected int|float|null $currentprice; //for compounding discounts
 
     protected array $adjustments = [];
 
     protected ?Adjustment $bestadjustment = null;
 
-    public function __construct(int|float $price)
+    public function __construct(int|float|null $price)
     {
         $this->currentprice = $price;
         $this->originalprice = $price;
