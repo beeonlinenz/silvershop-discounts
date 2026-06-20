@@ -16,8 +16,9 @@ class PriceInfo
 
     protected ?Adjustment $bestadjustment = null;
 
-    public function __construct(int|float $price)
+    public function __construct(int|float|null $price)
     {
+	$price = $price ?? 0;
         $this->currentprice = $price;
         $this->originalprice = $price;
     }
